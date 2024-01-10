@@ -1,0 +1,45 @@
+{
+  "name": "passphrase-backend",
+  "version": "4.1.0",
+  "description": "Backend service for Passphrase App",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "start:dev": "nodemon server",
+    "dev:start": " nodemon server",
+    "frontend": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run frontend\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": "16.18.x"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^7.6.0",
+    "axios": "^0.27.2",
+    "bcryptjs": "^2.4.3",
+    "canvas": "^2.10.2",
+    "cors": "^2.8.5",
+    "crypto-js": "^4.1.1",
+    "dotenv": "^8.6.0",
+    "email-validator": "^2.0.4",
+    "ethereumjs-util": "^7.1.5",
+    "ethers": "^5.7.2",
+    "express": "^4.17.1",
+    "hash.js": "^1.1.7",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.14",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.7.2",
+    "socket.io": "^4.4.1",
+    "web3": "^1.8.2"
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "nodemon": "^2.0.4"
+  }
+}

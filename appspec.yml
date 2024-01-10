@@ -1,0 +1,14 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/node/Passphrase-backend-main
+    overwrite: yes
+hooks:
+  AfterInstall:
+    - location: scripts/ownership-change.sh
+      timeout: 300
+  ApplicationStart:
+    - location: scripts/deploy.sh
+      timeout: 300
+      runas: node
